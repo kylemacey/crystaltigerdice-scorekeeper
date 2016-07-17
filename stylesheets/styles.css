@@ -8819,3 +8819,9 @@ button.close {
 #deadTiger, .dead-tiger {
   color: #f00;
 }
+
+/* line 25, ../sass/scorekeeper.scss */
+img.emoji {
+  margin: 0px !important;
+  display: inline !important;
+}
