@@ -5,6 +5,8 @@ var Game = function(players) {
   self.gameOver = false;
   self.playerTurn = 0;
 
+  ga("send", "event", "Game", "Started");
+
   var determineCurrentPlayer = function() {
     for(var i=0, player=null; i<self.players.length; i++) {
       if (self.players[i].getId() == self.playerTurn) {
@@ -34,6 +36,10 @@ var Game = function(players) {
         tiger = 0;
       }
 
+      ga("send", "event", "Game", "Score", "Crystal", crystal);
+      ga("send", "event", "Game", "Score", "Tiger", tiger);
+      ga("send", "event", "Game", "Score", "Dice", dice);
+
       var calcScore = parseInt(crystal) + parseInt(tiger) + parseInt(dice);
 
       self.currentPlayer.addScore(calcScore);
@@ -43,6 +49,7 @@ var Game = function(players) {
     },
 
     incrementTurn: function() {
+      ga("send", "event", "Game", "New Turn");
       self.playerTurn = (self.playerTurn + 1) % (self.players.length)
     },
 
@@ -55,6 +62,7 @@ var Game = function(players) {
     },
 
     winnerFound: function() {
+      ga("send", "event", "Game", "Complete", "Type", "Winner");
       for(var i=0, player=null; i<self.players.length; i++) {
         if (self.players[i].getScore() == 100) {
           player = self.players[i];
@@ -66,6 +74,7 @@ var Game = function(players) {
     },
 
     allDeadTigers: function() {
+      ga("send", "event", "Game", "Complete", "Type", "All Dead Tigers");
       for(var i=0, allDead=true; i<self.players.length; i++) {
         if (!self.players[i].isDeadTiger()) {
           allDead = false;

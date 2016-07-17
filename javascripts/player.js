@@ -6,6 +6,8 @@ var Player = function(id, name) {
   self.score = 0;
   self.deadTiger = false;
 
+  ga("send", "event", "Player", "New Player", "Name", self.name);
+
 
   return {
     getId: function() {
@@ -32,6 +34,7 @@ var Player = function(id, name) {
     },
 
     killTiger: function() {
+      ga("send", "event", "Game", "Dead Tiger");
       self.deadTiger = true;
     },
 
