@@ -1,0 +1,28 @@
+/* line 1, ../sass/scorekeeper.scss */
+.margin-top {
+  margin-top: 20px;
+}
+
+/* line 5, ../sass/scorekeeper.scss */
+.screen {
+  display: none;
+}
+/* line 7, ../sass/scorekeeper.scss */
+.screen.visible {
+  display: block;
+}
+
+/* line 12, ../sass/scorekeeper.scss */
+#scoreBoard > div {
+  text-align: center;
+}
+/* line 15, ../sass/scorekeeper.scss */
+#scoreBoard > div .player-nick {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+/* line 21, ../sass/scorekeeper.scss */
+#deadTiger, .dead-tiger {
+  color: #f00;
+}

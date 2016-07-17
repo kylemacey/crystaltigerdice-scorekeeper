@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Crystal Tiger Dice Scorekeeper</title>
+
+    <script src="javascripts/jquery.min.js" charset="utf-8"></script>
+    <script src="javascripts/bootstrap.min.js" charset="utf-8"></script>
+
+    <script src="javascripts/scorekeeper.js" charset="utf-8"></script>
+    <script src="javascripts/player.js" charset="utf-8"></script>
+    <script src="javascripts/game.js" charset="utf-8"></script>
+
+    <link rel="stylesheet" href="stylesheets/styles.css" media="screen" title="no title" charset="utf-8">
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Crystal Tiger Dice</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="index.html">New Game</a>
+            </li>
+            <li>
+              <a href="http://www.crystaltigerdice.com" target="_blank">Buy <span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    <div class="container">
+      <div id="playerEntry" class="screen">
+        <h1>New Game</h1>
+
+        <form name="playerEntryForm">
+          <div class="form-group">
+            <input type="text" class="form-control" name="0" placeholder="Player 1">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" name="1" placeholder="Player 2">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" name="2" placeholder="Player 3">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" name="3" placeholder="Player 4">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" name="4" placeholder="Player 5">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" name="5" placeholder="Player 6">
+          </div>
+
+          <input type="submit" class="btn btn-primary" value="Start Game">
+        </form>
+      </div>
+
+      <div id="scoreEntry" class="screen">
+        <div id="scoreBoard" class="row">
+          <div id="scorePlayer0" class="col-xs-2">
+            <span class="player-nick"></span> <br>
+            <span class="score-numeric">0</span>
+          </div>
+          <div id="scorePlayer1" class="col-xs-2">
+            <span class="player-nick"></span> <br>
+            <span class="score-numeric">0</span>
+          </div>
+          <div id="scorePlayer2" class="col-xs-2">
+            <span class="player-nick"></span> <br>
+            <span class="score-numeric">0</span>
+          </div>
+          <div id="scorePlayer3" class="col-xs-2">
+            <span class="player-nick"></span> <br>
+            <span class="score-numeric">0</span>
+          </div>
+          <div id="scorePlayer4" class="col-xs-2">
+            <span class="player-nick"></span> <br>
+            <span class="score-numeric">0</span>
+          </div>
+          <div id="scorePlayer5" class="col-xs-2">
+            <span class="player-nick"></span> <br>
+            <span class="score-numeric">0</span>
+          </div>
+        </div>
+
+        <div id="playerDisplay" class="text-center">
+          <h2 class="player-name">Player name</h2>
+          <h6 class="player-score">
+            Current Score: <span class="score-numeric">0</span>
+          </h6>
+          <h6 id="deadTiger">Dead Tiger :(</h6>
+        </div>
+
+        <form name="scoreEntryForm">
+          <div class="row">
+            <div class="col-xs-4">
+              <h5>Crystal</h5>
+              <select class="form-control" name="crystal">
+                <option value="1">Side</option>
+                <option value="5">Pyramid</option>
+                <option value="0">Didn't Roll</option>
+              </select>
+            </div>
+            <div class="col-xs-4">
+              <h5>Tiger</h5>
+              <select class="form-control" name="tiger">
+                <option value="2">Side</option>
+                <option value="10">Upright</option>
+                <option value="-1">Dead Tiger</option>
+                <option value="0">Didn't Roll</option>
+              </select>
+            </div>
+            <div class="col-xs-4">
+              <h5>Dice</h5>
+              <select class="form-control" name="dice">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="0">Didn't Roll</option>
+              </select>
+            </div>
+          </div>
+          <div class="row margin-top">
+            <div class="col-md-12 text-center">
+              <input type="submit" class="btn btn-primary" value="Submit Score">
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div id="allDeadTigers" class="screen">
+        <div class="col-md-12 text-center">
+          <h1>It's a sad day</h1>
+          <p>All the tigers have died</p>
+
+          <a href="index.html" class="btn btn-primary">Play Again</a>
+        </div>
+      </div>
+
+      <div id="winner" class="screen">
+        <div class="col-md-12 text-center">
+          <h1><span id="winnerName"></span> wins!</h1>
+
+          <a href="index.html" class="btn btn-primary">Play Again</a>
+        </div>
+      </div>
+
+      <div class="clear margin-top"></div>
+
+      <!-- Google AdSense -->
+
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- Crystal Tiger Dice -->
+      <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-9861822702319718"
+          data-ad-slot="9062708218"
+          data-ad-format="auto"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+
+    <div class="panel panel-default margin-top">
+      <div class="panel-body text-center">
+        <small>Made with ♥ by <a href="https://github.com/kylemacey" target="_blank">Kyle Macey</small>
+      </div>
+    </div>
+  </body>
+</html>

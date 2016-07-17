@@ -1,0 +1,23 @@
+.margin-top {
+  margin-top: 20px;
+}
+
+.screen {
+  display: none;
+  &.visible {
+    display: block;
+  }
+}
+
+#scoreBoard > div {
+  text-align: center;
+
+  .player-nick {
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+}
+
+#deadTiger, .dead-tiger {
+  color: #f00;
+}
