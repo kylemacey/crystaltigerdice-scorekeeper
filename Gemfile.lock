@@ -23,7 +23,7 @@ GEM
     ffi (1.9.14)
     kgio (2.10.0)
     multi_json (1.12.1)
-    rack (1.6.4)
+    rack (2.2.3)
     raindrops (0.15.0)
     rb-fsevent (0.9.7)
     rb-inotify (0.9.7)
